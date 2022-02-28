@@ -14,6 +14,7 @@ public class Notepad extends JFrame {
         JMenu edit = new JMenu("Edit");
         JMenu help = new JMenu("Help");
 
+        //file
         JMenuItem newFile = new JMenuItem("New");
         newFile.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.CTRL_MASK));
         JMenuItem openFile = new JMenuItem("Open");
@@ -24,10 +25,34 @@ public class Notepad extends JFrame {
         printFile.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, ActionEvent.CTRL_MASK));
         JMenuItem exitFile = new JMenuItem("Exit");
         exitFile.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, ActionEvent.CTRL_MASK));
+        /*you can use  exitFile.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0));
+        if you directly want to click esc and exit
+         */
 
         file.add(newFile);
         file.add(openFile);
         file.add(saveFile);
+        file.add(printFile);
+        file.add(exitFile);
+
+        //edit
+        JMenuItem copy = new JMenuItem("Copy");
+        copy.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
+        JMenuItem cut = new JMenuItem("Cut");
+        cut.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X,ActionEvent.CTRL_MASK));
+        JMenuItem paste = new JMenuItem("Paste");
+        paste.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
+        JMenuItem selectAll = new JMenuItem("Select All");
+        selectAll.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, ActionEvent.CTRL_MASK));
+
+        edit.add(copy);
+        edit.add(cut);
+        edit.add(paste);
+        edit.add(selectAll);
+
+        //help
+        JMenuItem aboutUs = new JMenuItem("About us");
+        help.add(aboutUs);
 
         menuBar.add(file);
         menuBar.add(edit);
