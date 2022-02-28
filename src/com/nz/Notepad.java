@@ -3,7 +3,10 @@ package com.nz;
 import javax.swing.*;
 
 public class Notepad extends JFrame {
-    public static void main(String[] args) {
+    Notepad(){
 
+    }
+    public static void main(String[] args) {
+       new Notepad().setVisible(true);
     }
 }
