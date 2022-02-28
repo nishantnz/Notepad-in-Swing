@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.*;
 
-import static jdk.internal.net.http.common.Utils.close;
 
 public class Notepad extends JFrame implements ActionListener {
     JTextArea area = new JTextArea();
