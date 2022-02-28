@@ -1,13 +1,23 @@
 package com.nz;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
-public class Notepad extends JFrame {
+public class Notepad extends JFrame{
     Notepad(){
         setBounds(0,0,1050,1050);
 
+        JTextArea area = new JTextArea();
+        JScrollPane pane = new JScrollPane(area);
+        area.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        add(pane, BorderLayout.CENTER);
+        //removing border layout
+        pane.setBorder(BorderFactory.createEmptyBorder());
+        //calling setlinewarp function so that the word comes on the next line ...basically wrapping content
+        area.setLineWrap(true);
+        area.setWrapStyleWord(true);
         JMenuBar menuBar = new JMenuBar();
 
         JMenu file = new JMenu("File");
@@ -59,6 +69,8 @@ public class Notepad extends JFrame {
         menuBar.add(help);
 
         setJMenuBar(menuBar);
+
+
     }
     public static void main(String[] args) {
        new Notepad().setVisible(true);
