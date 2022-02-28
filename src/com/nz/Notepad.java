@@ -1,7 +1,9 @@
 package com.nz;
 
-public class Main {
+import javax.swing.*;
+
+public class Notepad extends JFrame {
     public static void main(String[] args) {
-        System.out.println("hii");
+
     }
 }
