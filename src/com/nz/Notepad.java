@@ -20,6 +20,10 @@ public class Notepad extends JFrame {
         openFile.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O,ActionEvent.CTRL_MASK));
         JMenuItem saveFile = new JMenuItem("Save");
         saveFile.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK));
+        JMenuItem printFile = new JMenuItem("Print");
+        printFile.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, ActionEvent.CTRL_MASK));
+        JMenuItem exitFile = new JMenuItem("Exit");
+        exitFile.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, ActionEvent.CTRL_MASK));
 
         file.add(newFile);
         file.add(openFile);
