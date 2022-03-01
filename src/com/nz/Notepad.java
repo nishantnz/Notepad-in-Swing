@@ -18,7 +18,7 @@ public class Notepad extends JFrame implements ActionListener {
         setBounds(0,0,1050,1050);
 
 
-        area.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        //area.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         add(pane, BorderLayout.CENTER);
         //removing border layout
         pane.setBorder(BorderFactory.createEmptyBorder());
@@ -84,17 +84,17 @@ public class Notepad extends JFrame implements ActionListener {
         edit.add(selectAll);
 
         //fonts
-//        JMenuItem timesNewRoman = new JMenuItem("Times New Roman");
-//        timesNewRoman.addActionListener(this);
-//        fonts.add(timesNewRoman);
-//
-//        JMenuItem verdana = new JMenuItem("Verdana");
-//        timesNewRoman.addActionListener(this);
-//        fonts.add(verdana);
+        JMenuItem timesNewRoman = new JMenuItem("Times New Roman");
+        timesNewRoman.addActionListener(this);
+        fonts.add(timesNewRoman);
+
+        JMenuItem verdana = new JMenuItem("Verdana");
+        timesNewRoman.addActionListener(this);
+        fonts.add(verdana);
 
         menuBar.add(file);
         menuBar.add(edit);
-       // menuBar.add(fonts);
+        menuBar.add(fonts);
 
         setJMenuBar(menuBar);
 
@@ -174,10 +174,10 @@ public class Notepad extends JFrame implements ActionListener {
         }else if(e.getActionCommand().equals("Select All")){
          area.selectAll();
         }
-//        else if(e.getActionCommand().equals("Times New Roman")){
-//            area.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 20));
-//        } else if(e.getActionCommand().equals("Verdana")){
-//            area.setFont(new Font(Font.MONOSPACED, Font.ITALIC, 20));
-//        }
+        else if(e.getActionCommand().equals("Times New Roman")){
+            area.setFont(new Font("Times new Roman", Font.PLAIN, 20));
+        } else if(e.getActionCommand().equals("Verdana")){
+            area.setFont(new Font("Verdana", Font.ITALIC, 20));
+        }
     }
 }
