@@ -29,7 +29,7 @@ public class Notepad extends JFrame implements ActionListener {
 
         JMenu file = new JMenu("File");
         JMenu edit = new JMenu("Edit");
-        JMenu help = new JMenu("Help");
+        JMenu fonts = new JMenu("Fonts");
 
         //file
         JMenuItem newFile = new JMenuItem("New");
@@ -83,14 +83,18 @@ public class Notepad extends JFrame implements ActionListener {
         edit.add(paste);
         edit.add(selectAll);
 
-        //help
-        JMenuItem aboutUs = new JMenuItem("About us");
-        help.add(aboutUs);
-        aboutUs.addActionListener(this);
+        //fonts
+//        JMenuItem timesNewRoman = new JMenuItem("Times New Roman");
+//        timesNewRoman.addActionListener(this);
+//        fonts.add(timesNewRoman);
+//
+//        JMenuItem verdana = new JMenuItem("Verdana");
+//        timesNewRoman.addActionListener(this);
+//        fonts.add(verdana);
 
         menuBar.add(file);
         menuBar.add(edit);
-        menuBar.add(help);
+       // menuBar.add(fonts);
 
         setJMenuBar(menuBar);
 
@@ -170,5 +174,10 @@ public class Notepad extends JFrame implements ActionListener {
         }else if(e.getActionCommand().equals("Select All")){
          area.selectAll();
         }
+//        else if(e.getActionCommand().equals("Times New Roman")){
+//            area.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 20));
+//        } else if(e.getActionCommand().equals("Verdana")){
+//            area.setFont(new Font(Font.MONOSPACED, Font.ITALIC, 20));
+//        }
     }
 }
