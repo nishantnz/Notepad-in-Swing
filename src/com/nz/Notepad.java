@@ -78,10 +78,25 @@ public class Notepad extends JFrame implements ActionListener {
         selectAll.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, ActionEvent.CTRL_MASK));
         selectAll.addActionListener(this);
 
+        JMenuItem bold = new JMenuItem("Bold");
+        bold.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_B, ActionEvent.CTRL_MASK));
+        bold.addActionListener(this);
+
+        JMenuItem italic = new JMenuItem("Italic");
+        italic.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I, ActionEvent.CTRL_MASK));
+        italic.addActionListener(this);
+
+        JMenuItem plain = new JMenuItem("Plain");
+        plain.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T, ActionEvent.CTRL_MASK));
+        plain.addActionListener(this);
+
         edit.add(copy);
         edit.add(cut);
         edit.add(paste);
         edit.add(selectAll);
+        edit.add(bold);
+        edit.add(italic);
+        edit.add(plain);
 
         //fonts
         JMenuItem timesNewRoman = new JMenuItem("Times New Roman");
@@ -89,8 +104,16 @@ public class Notepad extends JFrame implements ActionListener {
         fonts.add(timesNewRoman);
 
         JMenuItem verdana = new JMenuItem("Verdana");
-        timesNewRoman.addActionListener(this);
+        verdana.addActionListener(this);
         fonts.add(verdana);
+
+        JMenuItem arial = new JMenuItem("Arial");
+        arial.addActionListener(this);
+        fonts.add(arial);
+
+        JMenuItem selima = new JMenuItem("Selima Regular");
+        selima.addActionListener(this);
+        fonts.add(selima);
 
         menuBar.add(file);
         menuBar.add(edit);
@@ -173,11 +196,22 @@ public class Notepad extends JFrame implements ActionListener {
             area.replaceRange("",area.getSelectionStart(),area.getSelectionEnd());
         }else if(e.getActionCommand().equals("Select All")){
          area.selectAll();
+        } else if(e.getActionCommand().equals("Bold")){
+            area.setFont(new Font("", Font.BOLD, 20));
+        } else if(e.getActionCommand().equals("Italic")){
+            area.setFont(new Font("", Font.ITALIC, 20));
+        }else if(e.getActionCommand().equals("Plain")){
+            area.setFont(new Font("", Font.PLAIN, 20));
         }
         else if(e.getActionCommand().equals("Times New Roman")){
             area.setFont(new Font("Times new Roman", Font.PLAIN, 20));
-        } else if(e.getActionCommand().equals("Verdana")){
-            area.setFont(new Font("Verdana", Font.ITALIC, 20));
+        }
+        else if(e.getActionCommand().equals("Verdana")){
+            area.setFont(new Font("Verdana", Font.PLAIN, 20));
+        }else if(e.getActionCommand().equals("Arial")){
+            area.setFont(new Font("Arial", Font.PLAIN, 20));
+        }else if(e.getActionCommand().equals("Selima Regular")){
+            area.setFont(new Font("Selima Regular", Font.PLAIN, 20));
         }
     }
 }
